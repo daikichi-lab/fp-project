@@ -1,0 +1,103 @@
+{
+  "deck": "outputs/challenge_seminar_script/day1/day1_challenge_seminar.pptx",
+  "totalScore": 92,
+  "band": "external",
+  "dimensions": {
+    "messageLogic": {
+      "score": 24,
+      "max": 25,
+      "notes": "全32枚が1枚1メッセージで、タイトルは全て結論か問い（例：S15『管理会計は、社長の\"これから\"のための数字です』、S8『僕は、何を間違えたのか』）。SCQA＋感情曲線（約束→でも――S6→どん底S9-10→気づきS11-12→安心S16→機会S19-20→正直開示S21→できたS27→高揚→宿題）が縦読みで一本の議論として通り、goal-action（今夜のBS投稿）がctaに一意。−1はS3とS18がともに『宣言・問いの3秒スライド』で機能がやや近接する点のみ。"
+    },
+    "visualIntegrity": {
+      "score": 22,
+      "max": 25,
+      "notes": "QAループ実施（4リント全PASS＋フレッシュアイズの32枚全数目視＋著者による争点スライド再目視）。あふれ・重なり・プレースホルダ・AIテルはゼロ。初回ビルドで捕捉したS26/S28のidentityラベルあふれ・S19の行末禁則・S30の左半分空白は全て修正済み。残る指摘は受容済みminor2件：S13のclosing帯が左下カード影に近接（衝突なし・エンジン固定の第5ゾーン）、S32のCTA円弧モチーフがキッカー下を通過（可読・coverと対の設計）。"
+    },
+    "designFidelity": {
+      "score": 19,
+      "max": 20,
+      "notes": "サンドイッチ成立（濃紺のcover/cta・白地の本文）。ダーク面7/32=22%で予算内、S9-S10のどん底2連はnotesに意図記録済み。支配色ネイビー＋鋼青アクセント1系統、warnはS9『約10億円』（痛みの意味色）の1箇所のみ。章扉はchapterスタイル（透かし数字なし＝セミナーレジスター準拠）。強調は5枚＋peak1枚（S27）で希少性維持。全てトークン由来・モチーフ一貫。−1はS21ダークの山場行がaccentOnDarkで立つ一方、直前S20のstatBigとの青系強調が2枚連続する点（意味は異なるが視覚語彙が近い）。"
+    },
+    "informationDesign": {
+      "score": 17,
+      "max": 20,
+      "notes": "全スライドに視覚要素（図解3枚は正準形：S26 identity・S28 identity+sub STRAC・S19実寸横棒。0.5秒テスト＝項目数と答えが文字なしで読める）。チャートはネイティブ・単位『万人』明示。表2枚は容量内で縦計算一致。−3の内訳：S19のデータラベルが『173.0/91.0/24.0』と不要な小数を持つ（8.2に引きずられた書式）／§4-5でmessageパターンの使用頻度が高く（32枚中12枚）、リズムがやや単調になる区間がある（セミナーの3秒スライド設計としては意図的だが、Day2以降は配分に注意）。"
+    },
+    "contentIntegrity": {
+      "score": 10,
+      "max": 10,
+      "notes": "重点確認済み：強調対象は全て事実が支持（S5 TOT共同経営=台本準拠の実話／S19主役のFP延べ173万は※延べ合格者数の開示付き＝誤認防止／S26・S28の強調はイメージ値と明記済みの説明図）。約10億円=概算・実話・内訳非開示（caption明記）、税理士82,297→約8.2万（令和8年6月末・確定）、127万社=中小企業庁・東京商工リサーチ併記。ダミー数値は全て検算一致（3,500=2,500+1,000／100=30+70・70=50+20／ミニPL 1,000-600=400-300=100）。価格表記ゼロ・成果断定ゼロ・自虐/関西弁ゼロ・尊敬の宣言ゼロ。S21で有料講座の存在を正直開示（金額なし）＝ポジション一貫。"
+    }
+  },
+  "visualQa": {
+    "ran": true,
+    "slides": [
+      { "slide": 1, "issues": [] },
+      { "slide": 2, "issues": [] },
+      { "slide": 3, "issues": [] },
+      { "slide": 4, "issues": [] },
+      { "slide": 5, "issues": [] },
+      { "slide": 6, "issues": [] },
+      { "slide": 7, "issues": [] },
+      { "slide": 8, "issues": [] },
+      { "slide": 9, "issues": [] },
+      { "slide": 10, "issues": [] },
+      { "slide": 11, "issues": [] },
+      { "slide": 12, "issues": [] },
+      { "slide": 13, "issues": [
+        { "type": "margin", "detail": "closing帯『その気持ち、痛いほど分かります——』が左下カードの影に数px近接（衝突なし・エンジン固定の帯位置）。受容。", "severity": "minor", "resolved": false }
+      ] },
+      { "slide": 14, "issues": [] },
+      { "slide": 15, "issues": [] },
+      { "slide": 16, "issues": [] },
+      { "slide": 17, "issues": [] },
+      { "slide": 18, "issues": [] },
+      { "slide": 19, "issues": [
+        { "type": "other", "detail": "takeaway内の行末『（※』禁則違反 → 括弧を廃し『※延べ合格者数で、現役の人数ではありません。』に文言修正して解消。", "severity": "minor", "resolved": true },
+        { "type": "chart", "detail": "データラベルが 173.0/91.0/24.0 と不要な .0 を表示（8.2 の小数に書式が引きずられる）。可読性への実害は小。", "severity": "minor", "resolved": false }
+      ] },
+      { "slide": 20, "issues": [] },
+      { "slide": 21, "issues": [] },
+      { "slide": 22, "issues": [] },
+      { "slide": 23, "issues": [] },
+      { "slide": 24, "issues": [] },
+      { "slide": 25, "issues": [] },
+      { "slide": 26, "issues": [
+        { "type": "overflow", "detail": "identity part『正味の財産（純資産）』2行がボックス高126% → ラベルを『正味の財産』1行に短縮して解消（design-lint再PASS・目視確認済）。", "severity": "major", "resolved": true }
+      ] },
+      { "slide": 27, "issues": [] },
+      { "slide": 28, "issues": [
+        { "type": "overflow", "detail": "identity part『税・社会保険』2行がボックス高117% → 『税・社保』1行に短縮して解消（目視確認済）。", "severity": "major", "resolved": true }
+      ] },
+      { "slide": 29, "issues": [] },
+      { "slide": 30, "issues": [
+        { "type": "alignment", "detail": "two-columnにleadが無く左半分が空白で欠落に見えた → lead段落を追加して解消（目視確認済）。", "severity": "minor", "resolved": true }
+      ] },
+      { "slide": 31, "issues": [] },
+      { "slide": 32, "issues": [
+        { "type": "overlap", "detail": "CTAの円弧モチーフ（darkAlt）がキッカー『今夜の宿題』の下を通過。テキストは可読・coverと対のエンジン設計のため受容。", "severity": "minor", "resolved": false }
+      ] }
+    ]
+  },
+  "findings": [
+    {
+      "dimension": "informationDesign",
+      "slide": 19,
+      "issue": "横棒チャートのデータラベルが『173.0』『91.0』『24.0』と不要な小数第1位を表示（最小値8.2の小数書式に全バーが揃うため）",
+      "fix": "エンジンのvalueFormatを整数系『#,##0;▲#,##0』に指定し、8.2万の精密値はtakeaway本文（既記載『約8.2万人』）に委ねる——または値を[8.2,24,91,173]のまま軸ラベル書式のみ変える"
+    },
+    {
+      "dimension": "visualIntegrity",
+      "slide": 13,
+      "issue": "closing帯が左下カードの影とほぼ接して窮屈に見える（衝突はなし）",
+      "fix": "closingを1行に短縮する（2行目『——僕も、ずっと逃げていたので。』をnotes/口頭へ移す）とカードとの間隔が回復する"
+    },
+    {
+      "dimension": "designFidelity",
+      "slide": 21,
+      "issue": "S20（青の127万社statBig）→S21（ダークの青系山場行）と青系強調が2枚連続し、視覚語彙がやや近い",
+      "fix": "任意：S21の山場行tone=accentをbase（白）に落とし、サイズlだけで山場を作る——正直開示は色より沈黙が効く場面のため"
+    }
+  ],
+  "verdict": "Ship（external・92点）。32枚が1枚1メッセージの一本の議論として通り、図解3枚は正準形・数値は全て検算一致と出典付きで、強調の全てを事実が支持している。QAループはブロッカー2件（identityラベルあふれ）を含む6件を捕捉・修正済みで、残るのは受容済みのminor 3件（S13帯の近接・S19ラベルの.0・S32モチーフ）のみ——いずれも登壇利用を妨げない。上のfindings 3件はDay2制作前に適用すると次デッキがさらに整う改善項目であり、本デッキの出荷条件ではない。"
+}

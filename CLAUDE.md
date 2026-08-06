@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-This is **not a software project** — it is a **business / marketing design repository** for the **FP法人マーケット攻略プロジェクト**（「FP育成プロジェクト」／運営＝大吉会計株式会社・daikichi-accg.co.jp、教育ブランド「大吉塾」）.
+This is **not a software project** — it is a **business / marketing design repository** for the **FP法人マーケット攻略プロジェクト**（「FP育成プロジェクト」／運営＝大吉会計株式会社・daikichi-accg.co.jp。※教育ブランド「大吉塾」の名称は**2026/7/14決定で非表示**＝生成物・対外物では使用しない）.
 
 It houses Japanese Markdown design documents for a high-ticket education funnel that trains FP・保険営業 (financial planner / insurance sales) professionals to break into the corporate (法人) market — teaching 決算書 reading, 財務分析, 相続, 事業承継. **There is no build, lint, test, or run step.** Deliverables are the Markdown documents in `docs/`.
 
@@ -16,9 +16,10 @@ Edits go wrong when only the inner layer is considered.
 
 **Layer 2 — the 循環エンジン** (上位の事業構造; `docs/mtg/2026_06_21_FP循環モデル_まとめ.md`): FP育成 is only the *入口* of a loop — 育ったFPが**共同募集**で経営者を連れてくる → 高収益の本業（管理会計・外部CFO・相続・事業承継・M&A・上場支援・不動産）が自動流入 → 成果と評判が次のFPを呼ぶ。最終顧客＝**売上2〜20億の経営者**（上場志向／M&A／実務成長の3類型）。FPは収益の終点ではなく起点。
 
-### Backend = two support models (二つの支援モデル)
-- **プランA：大吉塾｜FP法人会計マスターコース** — 30万・3ヶ月（"学ぶ"／基礎を固め初商談〜初契約まで自走）。
-- **プランB：伴走支援** — 300万・1年＋成果保証（"成果まで伴走"／Aを内包、共同募集・本業連携まで）。**Aは最上位の本命ではなくBへの一段**。
+### Backend = two support models (二つの支援モデル) ★2026/7/14 公開LPで確定
+**本講座の正＝公開LP**（https://hokenlp-av8vhogh.manus.space/ ・サイト名「法人保険提案実践アカデミー」）。リポジトリ内リファレンス＝`08_本講座_内容まとめ.md`／講座のみプラン詳細＝`08_本講座_講座のみプラン_33万.md`。
+- **プランA：経営者から選ばれるFP養成講座（3か月集中実践コース）・講座のみ** — **33万税込**・3ヶ月・全6回＋フォロー（"学ぶ"／基礎を固め初商談〜初契約まで自走。カリキュラム＝オリエン→MG体験→財務分析→相続→事業承継→ブランディング。第1期 2026/8/5〜10/28・定員10名）。
+- **プランB：伴走コンサルティング付・成果保証あり** — **198万税込**・1年・限定5名（"成果まで伴走"／Aを内包、商談同行無制限、成果保証＝手数料累計180万まで無期限。共同募集・本業連携まで）。**Aは最上位の本命ではなくBへの一段**。
 - 別導線：MG（マネジメントゲーム）体験会 2万 → 友の会 月1万。
 - バックエンドの**概念軸**＝「会計を武器に、FPが法人で保険を売れるようになる」（`02`/`08`）。会計は目的でなく手法。
 
@@ -52,7 +53,7 @@ Logical design order: **02 → 01 → 03 → 04 → 05**, bound by `00`.
 - Write in **Japanese**; match the existing tone (concrete, actionable, table/checklist-driven). Every doc ends with a "このドキュメントの使い方" cross-linking block — keep it.
 - **Keep the funnel internally consistent.** Live dependencies: 01 pains → 03 messaging; 04 seminar previews 02's backend; 05 proposes 02's exact plans/prices; 07 gifts bridge 3日間→backend; 00 value ladder = 02's tiers. Changing one number/claim means updating its references in the others.
 - **Decisions are recorded in `06_意思決定ログ.md` with a date.** When a new meeting file lands in `docs/mtg/`, summarize the transcript/`.docx` into a sibling `*_まとめ.md` (see `事業モデル説明_動画まとめ`, `2026_06_21_FP循環モデル_まとめ` for the format), then propagate into the affected docs and log the decision in `06`.
-- **`仮` labelling**: KPI targets, prices, headcount, names are placeholders marked **仮** — preserve until the user confirms. (Currently: セミナー名＝確定／A=30万＝維持／B=300万・成果保証・分配率・役割分担＝仮。)
+- **`仮` labelling**: KPI targets, prices, headcount, names are placeholders marked **仮** — preserve until the user confirms. (Currently: セミナー名＝確定／A=33万税込・B=198万税込・成果保証180万・定員10名/5名・第1期日程＝**確定（2026/7/14 LP）**／共同募集の分配率・役割分担＝仮。)
 - **Tax/legal numbers are NOT 仮 — they must be accurate.** Source of truth = `docs/research/知識ドメイン_リサーチ.md`（特例承継計画 2027/9/30・適用 2027/12/31、純資産価額方式の控除 38%〔2026/4〜〕、法人保険 2019年通達4区分、相続 基礎控除・非課税枠 等）. Every gift/script citing tax must match it and carry the コンプラ注意書き（税理士法・保険業法＝情報提供にとどめる）. Update research and the citing doc together.
 - **台本 follow `docs/style/fujiyama-voice-guide.md`**: 地は**標準語の丁寧語**、熱量は具体数字・身近なたとえ・前向きさ・オノマトペで出す（**関西弁・方言は生成テキストでは使わない**／2026-06-24 経営者方針。本人ライブの関西弁は別＝止めない）。**自虐は生成テキストに入れない**（失敗は「学び・使命」として前向きに）。価格は Day1-2 で出さず、Day3 クロージングで提示。
 - **割引はしない**（情報商材化を避ける）。動機づけは**期限付き特典**で。分割は"回数相談"（金額は下げない）。

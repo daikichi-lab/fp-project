@@ -1,0 +1,64 @@
+{
+  "$schema": "../.claude/plugins/cache/daikichi-plugins/pptx-creation/0.6.0/schemas/theme.schema.json",
+  "name": "daikichi-juku",
+  "canvas": { "w": 13.333, "h": 7.5, "margin": 0.8 },
+  "font": {
+    "family": "Yu Gothic",
+    "heading": "Yu Mincho",
+    "body": "Yu Gothic Medium",
+    "caption": "Yu Gothic"
+  },
+  "colors": {
+    "bg": "FAF7F0",
+    "ink": "2A221D",
+    "muted": "6B5D4F",
+    "faint": "A09580",
+    "surface": "F5EFE2",
+    "surfaceAccent": "F2E3DD",
+    "line": "E0D6C2",
+    "dark": "2A221D",
+    "darkAlt": "4A3F34",
+    "onDark": "FAF7F0",
+    "onDarkMuted": "BDB09E",
+    "accent": "8B1E1E",
+    "accentDeep": "6E1414",
+    "accentSoft": "C08076",
+    "onAccentMuted": "F5E3DC"
+  },
+  "sizes": {
+    "cover": 50,
+    "coverSub": 18,
+    "title": 33,
+    "kicker": 12,
+    "message": 34,
+    "stat": 66,
+    "head": 19,
+    "body": 15,
+    "small": 13.5,
+    "cap": 12,
+    "num": 17,
+    "compareLabel": 23,
+    "takeawayHead": 20,
+    "offerHead": 21,
+    "footer": 12.5,
+    "sectionTitle": 40,
+    "sectionIndex": 150,
+    "statCard": 42
+  },
+  "lead": {
+    "title": 1.1,
+    "display": 1.2,
+    "body": 1.65,
+    "caption": 1.55,
+    "tight": 1.45
+  },
+  "layout": {
+    "card": { "shadow": false },
+    "kicker": "bar",
+    "coverMotif": "none",
+    "sectionIndex": "none"
+  },
+  "brand": {
+    "footerLabel": "大吉塾"
+  }
+}

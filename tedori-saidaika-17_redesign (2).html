@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社と社長の手取り最大化17連発｜リデザイン版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1B1D;
+    --muted:#6E6E68;
+    --faint:#9A9A93;
+    --paper:#FFFFFF;
+    --backdrop:#E9E7E1;
+    --teal:#0F4C55;
+    --teal-soft:#3A7078;
+    --teal-tint:#ECF3F3;
+    --brass:#A97C21;
+    --brass-deep:#8A6413;
+    --brass-tint:#F8F2E2;
+    --brick:#A23B30;
+    --rule:#E4E1D9;
+    --rule-strong:#CFCBC0;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--backdrop);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.9;
+  }
+
+  /* ---------- Page frame ---------- */
+  .page{
+    position:relative;
+    width:210mm;
+    min-height:297mm;
+    margin:0 auto 22px;
+    padding:20mm 18mm 22mm;
+    background:var(--paper);
+    box-shadow:0 6px 26px rgba(0,0,0,.14);
+    overflow:hidden;
+  }
+  .foot{
+    position:absolute;
+    left:18mm; right:18mm; bottom:12mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:9.5px; letter-spacing:.14em; color:var(--faint);
+    border-top:1px solid var(--rule);
+    padding-top:7px;
+    text-transform:uppercase;
+  }
+  .foot .fnum{ font-family:"Manrope",sans-serif; font-weight:800; color:var(--brass-deep); letter-spacing:.02em; font-size:11px;}
+  .foot-jp{ text-transform:none; letter-spacing:.08em;}
+
+  /* ---------- Type helpers ---------- */
+  .eyebrow{ font-family:"Shippori Mincho",serif; font-weight:500; font-size:11px; letter-spacing:.34em; color:var(--teal-soft); }
+  p{ margin:0 0 12px; font-size:14.5px; }
+  .lead{ font-size:15px; }
+  .note{ font-size:12px; color:var(--muted); line-height:1.75; }
+  .em{ color:var(--brass-deep); font-weight:700; }
+  .em-teal{ color:var(--teal); font-weight:700; }
+  .em-brick{ color:var(--brick); font-weight:700; }
+  b,strong{ font-weight:700; }
+  .fig{ font-family:"Manrope",sans-serif; }
+
+  /* ---------- Section masthead ---------- */
+  .mast{ display:flex; align-items:flex-start; gap:20px; padding-bottom:16px; border-bottom:2px solid var(--teal); margin-bottom:22px; }
+  .mast-num{
+    font-family:"Manrope",sans-serif; font-weight:800;
+    font-size:74px; line-height:.82; color:var(--brass);
+    letter-spacing:-.02em; flex:0 0 auto;
+  }
+  .mast-titles{ padding-top:4px; }
+  .mast-titles .eyebrow{ display:block; margin-bottom:6px; }
+  .mast-title{ font-weight:900; font-size:29px; line-height:1.2; margin:0; letter-spacing:.01em; }
+  .mast-sub{ margin:5px 0 0; font-size:13.5px; color:var(--muted); letter-spacing:.02em; }
+
+  .runhead{ display:flex; align-items:center; gap:10px; padding-bottom:9px; border-bottom:1px solid var(--rule-strong); margin-bottom:20px; font-size:12.5px; letter-spacing:.06em; color:var(--muted); }
+  .runhead .rn{ font-family:"Manrope",sans-serif; font-weight:800; color:var(--brass-deep); font-size:14px; }
+
+  /* ---------- Block label ---------- */
+  .blocklabel{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:700; letter-spacing:.16em;
+    color:var(--teal); text-transform:uppercase;
+    margin:22px 0 11px;
+  }
+  .blocklabel::before{ content:""; width:20px; height:2px; background:var(--brass); display:inline-block; }
+
+  /* ---------- Voice card (speech bubble replacement) ---------- */
+  .voices{ display:flex; flex-wrap:wrap; gap:12px; margin:14px 0 16px; }
+  .voice{
+    flex:1 1 220px; position:relative;
+    border:1px solid var(--rule-strong); border-left:3px solid var(--teal);
+    background:#FCFCFB; border-radius:2px;
+    padding:14px 16px 14px 40px;
+    font-size:13.5px; font-weight:500; line-height:1.7;
+  }
+  .voice::before{
+    content:"\201C"; position:absolute; left:12px; top:6px;
+    font-family:"Shippori Mincho",serif; font-size:30px; color:var(--brass); line-height:1;
+  }
+
+  /* ---------- Generic callout ---------- */
+  .callout{ border:1px solid var(--rule-strong); border-left:3px solid var(--brass); background:#FCFAF4; padding:16px 18px; margin:14px 0; border-radius:2px; }
+  .callout.teal{ border-left-color:var(--teal); background:var(--teal-tint); }
+  .callout.warn{ border-left-color:var(--brick); background:#FBF2F0; }
+  .callout .cap{ font-size:11px; font-weight:700; letter-spacing:.16em; color:var(--brass-deep); text-transform:uppercase; display:block; margin-bottom:8px; }
+  .callout.teal .cap{ color:var(--teal); }
+  .callout.warn .cap{ color:var(--brick); }
+  .callout p:last-child{ margin-bottom:0; }
+
+  .datalist{ list-style:none; margin:6px 0 0; padding:0; }
+  .datalist li{ display:flex; justify-content:space-between; gap:16px; align-items:baseline; padding:7px 0; border-bottom:1px dotted var(--rule-strong); font-size:13.5px; }
+  .datalist li:last-child{ border-bottom:none; }
+  .datalist .dl-k{ color:var(--ink); }
+  .datalist .dl-v{ font-family:"Manrope",sans-serif; font-weight:700; color:var(--brass-deep); white-space:nowrap; }
+  .datalist .sub{ font-size:11px; color:var(--faint); font-weight:500; }
+
+  /* ---------- 3 columns ---------- */
+  .cols3{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:14px 0 16px; }
+  .col-card{ border-top:2px solid var(--teal); background:#FBFBFA; padding:13px 14px 15px; }
+  .col-card .cc-no{ font-family:"Manrope",sans-serif; font-weight:800; font-size:12px; color:var(--brass); letter-spacing:.06em; }
+  .col-card .cc-h{ font-weight:700; font-size:14.5px; margin:2px 0 6px; }
+  .col-card .cc-t{ font-size:12px; color:var(--muted); line-height:1.7; }
+
+  /* ---------- Merit / Demerit ---------- */
+  .mdbox{ border:1px solid var(--rule-strong); border-radius:2px; overflow:hidden; margin:14px 0; }
+  .mdbox .md-head{ display:flex; align-items:center; gap:10px; padding:9px 16px; font-size:12px; font-weight:700; letter-spacing:.14em; }
+  .mdbox.merit .md-head{ background:var(--teal); color:#fff; }
+  .mdbox.demerit .md-head{ background:#F3EEE9; color:var(--brick); border-bottom:1px solid var(--rule-strong); }
+  .md-row{ display:flex; gap:12px; padding:11px 16px; border-top:1px solid var(--rule); font-size:13.5px; }
+  .md-row:first-of-type{ border-top:none; }
+  .md-row .md-n{ font-family:"Manrope",sans-serif; font-weight:800; color:var(--brass); flex:0 0 auto; }
+  .md-sub{ display:block; font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.65; }
+
+  /* ---------- Simulation ---------- */
+  .sim{ border:1px solid var(--rule-strong); border-radius:2px; overflow:hidden; margin:16px 0; }
+  .sim-head{ background:var(--teal-tint); border-bottom:1px solid var(--rule-strong); padding:9px 16px; font-size:11px; font-weight:700; letter-spacing:.18em; color:var(--teal); text-transform:uppercase; }
+  .case{ padding:14px 16px; border-bottom:1px solid var(--rule); }
+  .case:last-of-type{ border-bottom:none; }
+  .case-h{ display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+  .case-badge{ font-family:"Manrope",sans-serif; font-weight:800; font-size:12px; color:#fff; background:var(--brass); border-radius:2px; padding:1px 8px; letter-spacing:.02em; }
+  .case-t{ font-weight:700; font-size:14px; }
+  .kv{ list-style:none; margin:0; padding:0; }
+  .kv li{ display:flex; justify-content:space-between; gap:16px; align-items:baseline; padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; }
+  .kv li:last-child{ border-bottom:none; }
+  .kv .kv-k{ color:var(--muted); }
+  .kv .kv-v{ font-family:"Manrope",sans-serif; font-weight:700; }
+  .kv .kv-res{ color:var(--teal); }
+  .kv .kv-res .kv-v{ color:var(--teal); font-size:15px; }
+  .strip{ background:var(--brass-tint); border-top:1px solid #EAD9A8; padding:12px 16px; text-align:center; font-weight:700; font-size:15px; color:var(--brass-deep); letter-spacing:.02em; }
+
+  /* ---------- Quiz ---------- */
+  .quiz{ border:1px solid var(--rule-strong); border-radius:2px; padding:16px 18px; margin:14px 0; }
+  .quiz-q{ display:flex; gap:11px; align-items:flex-start; margin-bottom:11px; }
+  .q-badge{ font-family:"Manrope",sans-serif; font-weight:800; color:#fff; background:var(--teal); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto; }
+  .quiz-q p{ margin:0; font-weight:700; font-size:14px; line-height:1.55; }
+  .opts{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 12px 35px; }
+  .opt{ border:1px solid var(--rule-strong); border-radius:2px; padding:4px 11px; font-size:12.5px; color:var(--muted); }
+  .opt .ol{ font-family:"Manrope",sans-serif; font-weight:800; color:var(--faint); margin-right:5px; }
+  .opt.correct{ border-color:var(--brass); background:var(--brass-tint); color:var(--brass-deep); font-weight:700; }
+  .opt.correct .ol{ color:var(--brass); }
+  .ans{ margin:0 0 0 35px; font-size:13px; }
+  .ans .lab{ font-size:10.5px; letter-spacing:.16em; color:var(--faint); font-weight:700; margin-right:8px; }
+  .ans .val{ font-weight:700; color:var(--brass-deep); }
+
+  /* ---------- Flow chips ---------- */
+  .flow{ display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; margin:20px 0; }
+  .flow-chip{ background:var(--teal); color:#fff; font-weight:700; font-size:15px; letter-spacing:.06em; padding:11px 24px; border-radius:2px; }
+  .flow-arr{ color:var(--brass); font-family:"Manrope",sans-serif; font-weight:800; font-size:20px; padding:0 14px; }
+
+  /* ---------- Bullet list ---------- */
+  .bullets{ list-style:none; margin:6px 0 14px; padding:0; }
+  .bullets li{ position:relative; padding-left:18px; margin-bottom:7px; font-size:14px; line-height:1.8; }
+  .bullets li::before{ content:""; position:absolute; left:2px; top:.72em; width:6px; height:6px; background:var(--brass); border-radius:50%; }
+  .bullets.tight li{ margin-bottom:4px; }
+  .bullets .bl-sub{ display:block; font-size:11.5px; color:var(--muted); margin-top:2px; line-height:1.65; }
+
+  /* ---------- Numbered steps ---------- */
+  .steps{ list-style:none; counter-reset:st; margin:8px 0 14px; padding:0; }
+  .steps li{ position:relative; padding:9px 0 9px 40px; border-bottom:1px solid var(--rule); font-size:14px; line-height:1.7; }
+  .steps li:last-child{ border-bottom:none; }
+  .steps li::before{ counter-increment:st; content:counter(st); position:absolute; left:0; top:8px; width:24px; height:24px; background:var(--teal-tint); color:var(--teal); border:1px solid var(--teal); border-radius:50%; font-family:"Manrope",sans-serif; font-weight:800; font-size:12px; display:flex; align-items:center; justify-content:center; }
+
+  /* ---------- Tag chips row ---------- */
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 4px; }
+  .chip{ background:var(--teal); color:#fff; font-size:12px; font-weight:700; letter-spacing:.04em; padding:4px 13px; border-radius:2px; }
+
+  /* ---------- Cover ---------- */
+  .cover{ display:flex; flex-direction:column; padding:22mm 18mm; }
+  .cover-top{ display:flex; align-items:center; gap:12px; }
+  .cover-badge{ font-size:11px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--ink); padding:6px 13px; line-height:1.6; }
+  .cover-badge b{ color:var(--brass); }
+  .cover-rule{ flex:1; height:1px; background:var(--rule-strong); }
+  .cover-kicker{ font-family:"Shippori Mincho",serif; font-weight:500; font-size:16px; letter-spacing:.06em; color:var(--teal-soft); margin:64px 0 14px; }
+  .cover-title{ margin:0; }
+  .cover-l1{ font-weight:700; font-size:40px; letter-spacing:.02em; line-height:1.28; }
+  .cover-l2{ font-weight:900; font-size:52px; letter-spacing:.01em; line-height:1.18; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .hl{ background:var(--brass); color:#fff; padding:2px 14px; border-radius:2px; }
+  .cover-17{ display:flex; align-items:baseline; gap:6px; margin-top:10px; }
+  .cover-17 .n{ font-family:"Manrope",sans-serif; font-weight:800; font-size:150px; line-height:.8; color:var(--brass); letter-spacing:-.03em; }
+  .cover-17 .u{ font-weight:900; font-size:56px; letter-spacing:.04em; }
+  .cover-foot{ margin-top:auto; display:flex; align-items:center; gap:16px; padding-top:26px; border-top:2px solid var(--teal); }
+  .cover-foot .tag{ font-weight:700; font-size:18px; letter-spacing:.03em; }
+  .cover-foot .tag em{ font-style:normal; color:var(--brick); }
+  .cover-sub{ font-size:12.5px; color:var(--muted); letter-spacing:.04em; margin-left:auto; text-align:right; line-height:1.7; }
+
+  /* ---------- TOC ---------- */
+  .toc-head{ margin-bottom:26px; }
+  .toc-head h2{ font-weight:900; font-size:34px; letter-spacing:.04em; margin:6px 0 0; }
+  .toc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 40px; }
+  .toc-item{ display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--rule); align-items:baseline; }
+  .toc-n{ font-family:"Manrope",sans-serif; font-weight:800; font-size:17px; color:var(--brass); flex:0 0 26px; letter-spacing:-.02em; }
+  .toc-body{ flex:1; min-width:0; }
+  .toc-t{ font-weight:700; font-size:14.5px; line-height:1.4; }
+  .toc-s{ font-size:11px; color:var(--muted); line-height:1.55; margin-top:2px; }
+  .toc-p{ font-family:"Manrope",sans-serif; font-weight:700; font-size:12px; color:var(--faint); flex:0 0 auto; letter-spacing:.06em; }
+
+  .draft-tag{ position:fixed; right:14px; top:14px; z-index:99; background:var(--ink); color:#fff; font-size:10px; letter-spacing:.14em; padding:6px 11px; border-radius:2px; opacity:.85; }
+
+  @media print{
+    body{ background:#fff; }
+    .draft-tag{ display:none; }
+    .page{ box-shadow:none; margin:0; break-after:page; page-break-after:always; }
+    .page:last-child{ break-after:auto; page-break-after:auto; }
+    @page{ size:A4 portrait; margin:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-tag">DESIGN PREVIEW</div>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="cover-top">
+    <span class="cover-badge">中小企業のオーナー・クリニックの医院長　<b>必見!!</b></span>
+    <span class="cover-rule"></span>
+  </div>
+
+  <p class="cover-kicker">社長の手取りを増やす、具体策をあなたに。</p>
+
+  <div class="cover-title">
+    <div class="cover-l1">会社と社長の</div>
+    <div class="cover-l2">手取り<span class="hl">最大化</span></div>
+    <div class="cover-17"><span class="n">17</span><span class="u">連発</span></div>
+  </div>
+
+  <div class="cover-foot">
+    <div class="tag">増税と社会保険料増に、<em>負けない。</em></div>
+    <div class="cover-sub">17の手法を、<br>会社→社長個人→後継者の各段階で。</div>
+  </div>
+</section>
+
+<!-- ============ はじめに ============ -->
+<section class="page">
+  <span class="eyebrow">INTRODUCTION</span>
+  <h1 style="font-weight:900;font-size:30px;margin:8px 0 20px;letter-spacing:.04em;">はじめに</h1>
+
+  <div class="voices">
+    <div class="voice">せっかく儲かったのに、<b>これしか残らないの!?</b></div>
+    <div class="voice"><b>税金や社会保険料が高すぎる!!</b></div>
+  </div>
+
+  <p class="lead">こんな風に感じる経営者は、あなただけではありません。多くの社長が<b>「お金が残らない」</b>という悩みを抱えています。</p>
+
+  <p>それもそのはずで、日本は少子高齢化に伴い国全体が財政難。税金も社会保険料も年々増加しており、今後も止まることなく続いていきます。何も対策をせず経営していると、どんなに稼いでも手元には残らず、低金利のせいで残った利益も増えません。</p>
+
+  <p>経営者も、家族を持つ一個人です。<b>会社にお金を残すこと</b>と、<b>個人にお金を移すこと</b>——この2つを同時に行う必要があります。しかしながら、</p>
+
+  <div class="flow">
+    <span class="flow-chip">会社</span>
+    <span class="flow-arr">▶</span>
+    <span class="flow-chip">社長個人</span>
+    <span class="flow-arr">▶</span>
+    <span class="flow-chip">後継者</span>
+  </div>
+
+  <p>このように、お金を移せば移すほど、税金や社会保険料が引かれるのが今の日本の制度です。税理士さんや銀行マン、友人の経営者からの節税・投資の話も、一つ一つは効果があるとしても、全体を俯瞰して経営者一人ひとりに合った手法を組み合わせなければ意味がありません。</p>
+
+  <div class="callout teal">
+    <p style="margin:0;">今の日本で本当にお金を残そうとするなら、この<b>「会社と社長の手取り最大化17連発」</b>が必ずあなたのお役に立つことでしょう。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">会社と社長の手取り最大化 17連発</span><span class="fnum">01</span></div>
+</section>
+
+<!-- ============ 目次 ============ -->
+<section class="page">
+  <div class="toc-head">
+    <span class="eyebrow">CONTENTS</span>
+    <h2>目次</h2>
+  </div>
+
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-n">01</span><div class="toc-body"><div class="toc-t">法人クレカマイル活用</div><div class="toc-s">無料で海外旅行と無料宿泊</div></div><span class="toc-p">P.04</span></div>
+    <div class="toc-item"><span class="toc-n">10</span><div class="toc-body"><div class="toc-t">エンジェル税制</div><div class="toc-s">裏技中の裏技、効果特大</div></div><span class="toc-p">P.17</span></div>
+
+    <div class="toc-item"><span class="toc-n">02</span><div class="toc-body"><div class="toc-t">出張旅費規程</div><div class="toc-s">非課税で、更に社会保険料もなく手取りUP</div></div><span class="toc-p">P.06</span></div>
+    <div class="toc-item"><span class="toc-n">11</span><div class="toc-body"><div class="toc-t">非常勤役員</div><div class="toc-s">家族を非常勤役員にして、家族の中で手取りを最大化</div></div><span class="toc-p">P.19</span></div>
+
+    <div class="toc-item"><span class="toc-n">03</span><div class="toc-body"><div class="toc-t">事前確定届出給与</div><div class="toc-s">役員賞与で手取りUPする裏技!?</div></div><span class="toc-p">P.08</span></div>
+    <div class="toc-item"><span class="toc-n">12</span><div class="toc-body"><div class="toc-t">マイクロ法人</div><div class="toc-s">社会保険に悩む経営者必見</div></div><span class="toc-p">P.21</span></div>
+
+    <div class="toc-item"><span class="toc-n">04</span><div class="toc-body"><div class="toc-t">退職金規定</div><div class="toc-s">退職金は手取りUPの正攻法!!</div></div><span class="toc-p">P.10</span></div>
+    <div class="toc-item"><span class="toc-n">13</span><div class="toc-body"><div class="toc-t">借上げ社宅</div><div class="toc-s">経営者にとっても社員にとっても◎、更に離職率ダウン</div></div><span class="toc-p">P.23</span></div>
+
+    <div class="toc-item"><span class="toc-n">05</span><div class="toc-body"><div class="toc-t">iDeCo</div><div class="toc-s">iDeCoと小規模企業共済とはぐくみ企業年金の最適な組み合わせ</div></div><span class="toc-p">P.11</span></div>
+    <div class="toc-item"><span class="toc-n">14</span><div class="toc-body"><div class="toc-t">経営セーフティー共済</div><div class="toc-s">手軽な節税の王道</div></div><span class="toc-p">P.25</span></div>
+
+    <div class="toc-item"><span class="toc-n">06</span><div class="toc-body"><div class="toc-t">小規模企業共済</div><div class="toc-s">最大年間84万円の所得控除</div></div><span class="toc-p">P.12</span></div>
+    <div class="toc-item"><span class="toc-n">15</span><div class="toc-body"><div class="toc-t">法人生命保険で納税の自在繰り延べ</div><div class="toc-s">普通の保険屋さんは知らない裏技</div></div><span class="toc-p">P.26</span></div>
+
+    <div class="toc-item"><span class="toc-n">07</span><div class="toc-body"><div class="toc-t">はぐくみ企業年金</div><div class="toc-s">最大、役員報酬の20%を所得控除</div></div><span class="toc-p">P.13</span></div>
+    <div class="toc-item"><span class="toc-n">16</span><div class="toc-body"><div class="toc-t">事業承継、相続対策、株価計算</div><div class="toc-s">あなたの会社の株価は？株価引下げ対策も</div></div><span class="toc-p">P.28</span></div>
+
+    <div class="toc-item"><span class="toc-n">08</span><div class="toc-body"><div class="toc-t">経営者だけができる新NISA</div><div class="toc-s">経営者だけに許される、あの制度で新NISAを</div></div><span class="toc-p">P.14</span></div>
+    <div class="toc-item"><span class="toc-n">17</span><div class="toc-body"><div class="toc-t">ふるさと納税</div><div class="toc-s">ふるさと納税で星野リゾートへ無料宿泊</div></div><span class="toc-p">P.30</span></div>
+
+    <div class="toc-item"><span class="toc-n">09</span><div class="toc-body"><div class="toc-t">積立投資にハワイ旅行がついてくる!?</div><div class="toc-s">クレカ積立で貯めたマイルを旅行へ</div></div><span class="toc-p">P.16</span></div>
+    <div class="toc-item" style="border-bottom:none;"></div>
+  </div>
+
+  <div class="foot"><span class="foot-jp">会社と社長の手取り最大化 17連発</span><span class="fnum">03</span></div>
+</section>
+
+<!-- ============ 01 法人クレカマイル活用 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">01</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">法人クレカマイル活用</h1>
+      <p class="mast-sub">無料で海外旅行と無料宿泊</p>
+    </div>
+  </header>
+
+  <p>ここ数年、経営者の皆さんからよく相談されるようになってきた話題が一つあります。それはこんな相談です。</p>
+
+  <div class="voices">
+    <div class="voice">知り合いの社長が、税金をクレジットカードで納めているらしいんだけど詳しい？</div>
+  </div>
+
+  <p>日本の納税額のデータを調べてみると——</p>
+
+  <ul class="datalist">
+    <li><span class="dl-k">消費税 <span class="sub">2021年度／財務省</span></span><span class="dl-v">21兆8886億円</span></li>
+    <li><span class="dl-k">法人税 <span class="sub">2021年度／財務省</span></span><span class="dl-v">13兆6428億円</span></li>
+    <li><span class="dl-k">所得税 <span class="sub">2021年度／財務省</span></span><span class="dl-v">21兆3822億円</span></li>
+  </ul>
+
+  <p style="margin-top:14px;">ご存じない経営者もいらっしゃると思いますが、日本では<span class="em">法人税・相続税・贈与税という国税をクレジットカードで払えます。</span>さらに地方税も2023年4月からクレジットカード対応が始まりました。税金をクレカで払っている社長は、<b>貯めたマイルで社員旅行が無料</b>だった、というわけです。</p>
+
+  <div class="callout">
+    <span class="cap">基本的な仕組み</span>
+    <ul class="datalist">
+      <li><span class="dl-k">納税額（今回はクレカで納税）</span><span class="dl-v">1,400万円</span></li>
+      <li><span class="dl-k">クレカ納税の手数料 <span class="sub">ゼロにする方法もあり</span></span><span class="dl-v">約 0.83%</span></li>
+      <li><span class="dl-k">もらえるポイント <span class="sub">1ポイント＝1円の価値</span></span><span class="dl-v">14万ポイント</span></li>
+      <li><span class="dl-k">マイルに交換すると</span><span class="dl-v">14万マイル</span></li>
+    </ul>
+  </div>
+
+  <p style="margin-bottom:0;">ところで、14万マイルの価値はご存じでしょうか。<b>マイルを使うと飛行機が予約できます。</b>次のページで、その"化け方"を見ていきます。</p>
+
+  <div class="foot"><span class="foot-jp">01　法人クレカマイル活用</span><span class="fnum">04</span></div>
+</section>
+
+<!-- ============ 01 法人クレカマイル活用 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">01</span> 法人クレカマイル活用</div>
+
+  <div class="callout teal">
+    <span class="cap">例：新潟空港 → 新千歳空港</span>
+    <ul class="datalist" style="margin-top:2px;">
+      <li><span class="dl-k">北海道往復に必要なマイル <span class="sub">2023年9月／ANAマイル</span></span><span class="dl-v">15,000マイル</span></li>
+      <li><span class="dl-k">4人家族なら 15,000 × 4人</span><span class="dl-v">60,000マイル</span></li>
+    </ul>
+    <p class="note" style="margin:10px 0 0;">14万マイルあれば、4人家族で北海道に2回もタダで行けます。しかも14万マイルは"14万円"ではありません——<b>マイルにすれば数倍〜最大16倍</b>の価値になります。</p>
+  </div>
+
+  <p>マイルの価値を最大化するなら、「エコノミー」ではなく<b>「ビジネス」や「ファーストクラス」の航空券をマイルで予約する</b>のがポイントです。</p>
+
+  <div class="quiz">
+    <div class="quiz-q"><span class="q-badge">Q</span><p>ファーストクラスでニューヨーク往復の航空券は、いくら？</p></div>
+    <div class="opts">
+      <span class="opt"><span class="ol">A</span>41万円</span>
+      <span class="opt"><span class="ol">B</span>66万円</span>
+      <span class="opt"><span class="ol">C</span>141万円</span>
+      <span class="opt correct"><span class="ol">D</span>221万円</span>
+    </div>
+    <p class="ans"><span class="lab">ANSWER</span><span class="val">D. 221万円</span></p>
+    <p class="note" style="margin:9px 0 0 35px;">1ポイント1円換算だと、221万ポイント貯めるには<b>2億2100万円</b>のクレジットカード決済が必要です。</p>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-q"><span class="q-badge">Q</span><p>では、221万円の航空券に必要なマイル数は？</p></div>
+    <div class="opts">
+      <span class="opt correct"><span class="ol">A</span>14万マイル</span>
+      <span class="opt"><span class="ol">B</span>41万マイル</span>
+      <span class="opt"><span class="ol">C</span>144万マイル</span>
+      <span class="opt"><span class="ol">D</span>221万マイル</span>
+    </div>
+    <p class="ans"><span class="lab">ANSWER</span><span class="val">A. 14万マイル</span></p>
+  </div>
+
+  <div class="strip" style="border:1px solid #EAD9A8;border-radius:2px;">221万円 ÷ 14万マイル ≒ 15.78　→　1マイルが約16倍の価値に。</div>
+
+  <div class="foot"><span class="foot-jp">01　法人クレカマイル活用</span><span class="fnum">05</span></div>
+</section>
+
+<!-- ============ 02 出張旅費規程 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">02</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">出張旅費規程</h1>
+      <p class="mast-sub">非課税で、更に社会保険料もなく手取りUP</p>
+    </div>
+  </header>
+
+  <p>経営者が長年やっているお勧めの節税。それは<b>『出張旅費規程』の策定</b>です。出張に行く際のルールを会社で作ると、かなりお得に節税できます。</p>
+
+  <span class="blocklabel">制度説明</span>
+  <p>出張に行く際に実費で精算するのではなく、会社から手当を受け取る——ということです。主に手当には3つあります。</p>
+
+  <div class="cols3">
+    <div class="col-card"><div class="cc-no">01</div><div class="cc-h">交通費</div><div class="cc-t">電車、新幹線、飛行機、タクシー など</div></div>
+    <div class="col-card"><div class="cc-no">02</div><div class="cc-h">宿泊費</div><div class="cc-t">ホテルや旅館</div></div>
+    <div class="col-card"><div class="cc-no">03</div><div class="cc-h">日当</div><div class="cc-t">家にいたら掛からない、食事代をはじめとした雑費</div></div>
+  </div>
+
+  <p>どこに出張したら、いくら手当を払うのかを規定で決めます。毎回の交通費・ホテル・食事代の領収書をまとめる手間を省き、精算業務を楽にするための制度です。</p>
+
+  <div class="callout">
+    <span class="cap">具体例</span>
+    <p style="margin:0 0 8px;">宿泊費を1泊 <span class="em fig">15,000円</span> と決めると、<span class="fig">10,000円</span>のホテルに泊まっても15,000円受け取れて <b>5,000円お得</b>。日当を2万円とすれば、食事代・交際費で1万円しか掛からなくても2万円受け取れます。</p>
+    <p style="margin:0;">そしてこの制度の最大のメリットは、<span class="em-brick">受け取った金額には税金も社会保険も掛からない</span>ということ。ホテル・交通費・日当のすべてが非課税です。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">02　出張旅費規程</span><span class="fnum">06</span></div>
+</section>
+
+<!-- ============ 02 出張旅費規程 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">02</span> 出張旅費規程</div>
+
+  <div class="callout warn">
+    <span class="cap">注意点</span>
+    <p style="margin:0 0 6px;">規定で定める金額は、<b>いくらでもいいわけではありません。</b>例えば新潟から東京への新幹線代は往復で2万円くらい。それなのに3万円と規定を作ってはいけません。</p>
+    <p style="margin:0;"><b>社会通念上、妥当な金額</b>でなくてはならないのです。日当も1日10万円というと明らかに多すぎるため、否認される可能性が高くなります。</p>
+  </div>
+
+  <p>会社で独自に決めていいのですが、詳しい人に確認したほうが安心です。知り合いの経営者で出張が多い人は、年間100泊ほどするそうです。仮に日当とホテル代で1万円お得できるとすると、<span class="em">年間100万円</span>が税金も社会保険も掛からず受け取れます。これは大きいですね。</p>
+
+  <div class="mdbox merit">
+    <div class="md-head">MERIT ／ メリット</div>
+    <div class="md-row"><span class="md-n">1</span><div>受け取る個人として税金・社会保険が掛からず、手取りが増える</div></div>
+    <div class="md-row"><span class="md-n">2</span><div>精算が楽になる</div></div>
+    <div class="md-row"><span class="md-n">3</span><div>会社も、実際にかかった経費より多い経費が認められれば法人税を節税できる</div></div>
+  </div>
+
+  <div class="mdbox demerit">
+    <div class="md-head">DEMERIT ／ デメリット</div>
+    <div class="md-row"><span class="md-n">1</span><div>会社からすると、多めの経費が掛かる</div></div>
+    <div class="md-row"><span class="md-n">2</span><div>役員だけでなく社員にも規定を適用しなくてはならない<span class="md-sub">出張が多い会社だと資金繰りが圧迫される。※実際は社長・役員・社員で金額を変えた規定を作ることで解決できます。</span></div></div>
+  </div>
+
+  <p style="margin-bottom:0;">どんな規定を作るかは、慎重に決める必要があります。</p>
+
+  <div class="foot"><span class="foot-jp">02　出張旅費規程</span><span class="fnum">07</span></div>
+</section>
+
+<!-- ============ 03 事前確定届出給与 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">03</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">事前確定届出給与</h1>
+      <p class="mast-sub">役員賞与で手取りUPする裏技!?</p>
+    </div>
+  </header>
+
+  <p>役員報酬のもらい方には、基本的に2種類あります。</p>
+
+  <div class="cols3" style="grid-template-columns:1fr 1fr;">
+    <div class="col-card"><div class="cc-no">TYPE 01</div><div class="cc-h">定期同額給与</div><div class="cc-t">毎月同じ額をもらう</div></div>
+    <div class="col-card"><div class="cc-no">TYPE 02</div><div class="cc-h">事前確定届出給与</div><div class="cc-t">賞与のようにもらう</div></div>
+  </div>
+
+  <span class="blocklabel">定期同額給与</span>
+  <p>例えば3月決算の場合、決算が終わった3カ月以内に役員報酬を決めなくてはいけません。そして100万円と決めたなら、基本的に期の途中で増やしたり減らしたりしてはいけないルールです。期中で変えることを認めると利益を操作できてしまうため、というのが理由です。</p>
+  <p>ただし、著しく業績が悪化した場合は期中でも下げてよい——ただし<b>一度下げたら、その後は変えられません。</b>逆に、業績が良くても期中で上げるのは禁止されています。</p>
+
+  <span class="blocklabel">事前確定届出給与</span>
+  <p>基本的に役員賞与は経費に認められませんが、ある届け出を出すことで経費に認められる裏技があります。それが<span class="em-brick">「事前確定届出給与」</span>です。これも決算後3カ月以内に届け出ますが、厳格な3つのルールがあります。</p>
+
+  <div class="chips"><span class="chip">① いつ</span><span class="chip">② だれが</span><span class="chip">③ いくら</span></div>
+  <p class="note" style="margin:2px 0 12px;">もらうかを届け出ること、そして決して変えてはいけません。</p>
+
+  <div class="callout teal"><p style="margin:0;font-size:15px;"><b>例）社長が、2024年7月25日に、500万円もらう。</b></p></div>
+  <p style="margin-bottom:0;">指定した日が銀行振込できない土日祝日だと、もう認められません。金額も <b>500万円ちょうど</b>を賞与として払う必要があります——400万でも600万でもダメ。届け出た金額をそのまま払わなくてはいけないのです。</p>
+
+  <div class="foot"><span class="foot-jp">03　事前確定届出給与</span><span class="fnum">08</span></div>
+</section>
+
+<!-- ============ 03 事前確定届出給与 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">03</span> 事前確定届出給与</div>
+
+  <p>この制度、実は何年も前からあるのですが、届け出ている社長はほとんど見たことがありません。税理士に相談しても——</p>
+
+  <div class="voices">
+    <div class="voice">年金がもらえなくなりますよ</div>
+    <div class="voice">毎月同じ金額にすれば一緒ですよ</div>
+  </div>
+  <p>と言われることが多いです。けれど、この制度は資金繰りを非常に柔軟に行えます。例えば奥さんが役員になっている場合、業績と資金繰りの状況を見て——</p>
+
+  <div class="callout">
+    <span class="cap">期初に届け出るパターン例（奥さんが役員の場合）</span>
+    <ul class="kv">
+      <li><span class="kv-k"><span class="fig" style="color:var(--brass);font-weight:800;">①</span>　社長 300万・奥さん 200万</span></li>
+      <li><span class="kv-k"><span class="fig" style="color:var(--brass);font-weight:800;">②</span>　社長 300万</span></li>
+      <li><span class="kv-k"><span class="fig" style="color:var(--brass);font-weight:800;">③</span>　奥さん 200万</span></li>
+      <li><span class="kv-k"><span class="fig" style="color:var(--brass);font-weight:800;">④</span>　0（払わない）</span></li>
+    </ul>
+  </div>
+
+  <p style="margin-bottom:0;">まずは期初に届け出ないと始まりません。<span class="em-brick">「払えないなら払わない」</span>という選択ができるのが大きいですよね。</p>
+
+  <div class="foot"><span class="foot-jp">03　事前確定届出給与</span><span class="fnum">09</span></div>
+</section>
+
+<!-- ============ 04 退職金規定 ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">04</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">退職金規定</h1>
+      <p class="mast-sub">退職金は手取りUPの正攻法!!</p>
+    </div>
+  </header>
+
+  <p>会社から個人へお金を移動させるには、基本的に「役員報酬」以外にありません。ただ、役員報酬を払うと社会保険と税金が必ずついて回ります。実際に計算してみます。</p>
+
+  <div class="sim">
+    <div class="sim-head">40歳男性・35歳で役員就任・70歳まで勤務して退職金をもらう</div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 1</span><span class="case-t">役員報酬のみでもらう手取り</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">役員報酬（月100万／年1,200万）の月手取り</span><span class="kv-v">70万円</span></li>
+        <li><span class="kv-k">年間手取り（税・社保 △353万）</span><span class="kv-v">847万円</span></li>
+        <li class="kv-res"><span class="kv-k">847万 × 30年 ＝ トータル手取り</span><span class="kv-v">2億5,410万円</span></li>
+      </ul>
+    </div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 2</span><span class="case-t">役員報酬を抑えて、退職金でもらう手取り</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">役員報酬（月80万／年960万）の年間手取り（税・社保 △267万）</span><span class="kv-v">693万円</span></li>
+        <li><span class="kv-k">693万 × 30年</span><span class="kv-v">2億790万円</span></li>
+        <li><span class="kv-k">減額した月20万 × 12カ月 × 30年 ＝ 7,200万 → 退職金の手取り</span><span class="kv-v">6,125万円</span></li>
+        <li class="kv-res"><span class="kv-k">役員報酬＋退職金 トータル手取り</span><span class="kv-v">2億6,915万円</span></li>
+      </ul>
+    </div>
+    <div class="strip">ケース①と②で、手取りが 1,505万円 も違う。</div>
+  </div>
+
+  <p style="margin-bottom:0;">この違いは大きいですね。老後の生活がまるで違う金額です。資産形成をするなら、個人が社会保険と税金を引かれた後の手取りで行うのではなく、<b>会社で退職金として資産形成したほうがいい</b>——ということが分かります。</p>
+
+  <div class="foot"><span class="foot-jp">04　退職金規定</span><span class="fnum">10</span></div>
+</section>
+
+<!-- ============ 05 iDeCo ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">05</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">iDeCo</h1>
+      <p class="mast-sub">iDeCoと小規模企業共済とはぐくみ企業年金の最適な組み合わせ</p>
+    </div>
+  </header>
+
+  <p>iDeCoとは、<b>「老後のために、自分で育てる自分の年金」</b>のことです。毎月拠出した掛金を運用し資産形成する年金制度で、60歳まで受け取れませんが様々なメリットがあります。新NISAは値上がりしたら非課税のメリット。iDeCoは<b>値上がりしなくても</b>3つの明確なメリットがあります。</p>
+
+  <div class="mdbox merit">
+    <div class="md-head">MERIT ／ メリット</div>
+    <div class="md-row"><span class="md-n">1</span><div>毎月の掛け金がすべて所得控除の対象</div></div>
+    <div class="md-row"><span class="md-n">2</span><div>運用期間中の値上がり益や配当が非課税</div></div>
+    <div class="md-row"><span class="md-n">3</span><div>受け取る際も税制優遇<span class="md-sub">退職金でもらうなら退職所得控除、年金でもらうなら公的年金控除 など。</span></div></div>
+  </div>
+
+  <p>一番大きいのは、メリット1<span class="em">「毎月の掛け金がすべて所得控除の対象」</span>です。経営者の掛け金上限は月23,000円・年276,000円で、これが全額所得控除になります。</p>
+
+  <div class="callout">
+    <span class="cap">実証：年収1,800万円・所得税率33%・住民税率10%の経営者</span>
+    <p style="margin:0;">年間276,000円のiDeCoに加入するだけで、<b>所得税 91,080円 ＋ 住民税 27,600円（合計 118,680円）</b>が軽減されます。</p>
+  </div>
+
+  <div class="strip" style="border:1px solid #EAD9A8;border-radius:2px;">276,000円の投資に対して、43%のリターン。（値上がりの有無に関わらず確実に得られる）</div>
+
+  <div class="foot"><span class="foot-jp">05　iDeCo</span><span class="fnum">11</span></div>
+</section>
+
+<!-- ============ 06 小規模企業共済 ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">06</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">小規模企業共済</h1>
+      <p class="mast-sub">最大年間84万円の所得控除</p>
+    </div>
+  </header>
+
+  <p>小規模企業共済は、個人事業主や中小企業の役員が加入できる退職金積立制度です。掛金は毎月1,000円〜70,000円で自由に設定でき、<b>全額が所得控除</b>されます。増額・減額の自由度が高く、貸付制度もあります。</p>
+
+  <p>そしてこちらは「小規模」な会社役員のみが加入できる制度なので、従業員がある程度増えると加入資格を失います。ただし、従業員が少ないうちに加入すれば、後で従業員が減ってもやめさせられることはありません。<b>加入資格があるうちに、必ず始める必要があります。</b></p>
+
+  <div class="callout">
+    <span class="cap">検証：月収150万の経営者が毎月70,000円積み立てると…</span>
+    <ul class="datalist">
+      <li><span class="dl-k">所得税</span><span class="dl-v">23,100円</span></li>
+      <li><span class="dl-k">住民税</span><span class="dl-v">7,000円</span></li>
+      <li><span class="dl-k"><b>合計（減税）</b></span><span class="dl-v" style="color:var(--brick);">30,100円</span></li>
+    </ul>
+    <p class="note" style="margin:10px 0 0;">7万円積み立てるだけで、3万円の減税です。</p>
+  </div>
+
+  <p><b>「iDeCo」と併用できる</b>のもポイントです。ただ、自分の会社が「小規模」かどうかが分かれ目——</p>
+
+  <div class="voices"><div class="voice" style="flex:0 1 auto;">でも、もううちの会社は小規模じゃないんだよな…</div></div>
+
+  <p style="margin-bottom:0;">という経営者には、小規模じゃなくても使える最強の所得税節税方法<span class="em">「はぐくみ企業年金」</span>を、次でご紹介します。</p>
+
+  <div class="foot"><span class="foot-jp">06　小規模企業共済</span><span class="fnum">12</span></div>
+</section>
+
+<!-- ============ 07 はぐくみ企業年金 ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">07</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">はぐくみ企業年金</h1>
+      <p class="mast-sub">最大、役員報酬の20%を所得控除</p>
+    </div>
+  </header>
+
+  <p>「はぐくみ企業年金」——聞いたことがある人はかなり少ないと思いますが、最強の所得税節税制度です。</p>
+
+  <div class="callout">
+    <span class="cap">解説</span>
+    <p style="margin:0;">はぐくみ企業年金（旧愛称：はぐくみ基金／正式名称：福祉はぐくみ企業年金基金）は、厚生労働大臣の認可を受けて設立された企業年金制度（確定給付企業年金）です。業界業種や規模を問わず導入・加入でき、社員と役員が将来の退職金のために積み立てる制度。会社として加入しつつ、社員・役員それぞれが加入するかしないかを選べます。</p>
+  </div>
+
+  <div class="mdbox merit">
+    <div class="md-head">MERIT ／ メリット</div>
+    <div class="md-row"><span class="md-n">1</span><div>社員・役員の社会保険削減<span class="md-sub">給料25万の社員が最高5万円積み立てると、20万円として社会保険を計算。</span></div></div>
+    <div class="md-row"><span class="md-n">2</span><div>社員の所得税・住民税削減<span class="md-sub">同じく20万円として所得税・住民税を計算。</span></div></div>
+    <div class="md-row"><span class="md-n">3</span><div>役員の所得税・住民税削減<span class="md-sub">役員報酬 月150万の社長なら、20%の30万円が所得控除できます。</span></div></div>
+  </div>
+
+  <div class="strip">30万円分の 所得税・住民税・社会保険料 が削減できます。</div>
+
+  <p style="margin-bottom:0;">こんなに高額な所得控除ができる制度は、他に中々ありません。どのくらい節税になるかは、説明しなくても分かりますね。</p>
+
+  <div class="foot"><span class="foot-jp">07　はぐくみ企業年金</span><span class="fnum">13</span></div>
+</section>
+
+<!-- ============ 08 経営者だけができる新NISA (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">08</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">経営者だけができる新NISA</h1>
+      <p class="mast-sub">経営者だけに許される、あの制度で新NISAを</p>
+    </div>
+  </header>
+
+  <p>2024年1月から始まった新NISA。決められた口座で毎年一定額の範囲内で購入した株式や投資信託などから得られる利益に、<b>税金がかからない</b>制度です（通常は利益に対して20%課税）。現行NISAは2014年1月開始。10年を経て、個人投資家により有利な条件で新NISAがスタートしました。主な変更点は2つです。</p>
+
+  <div class="callout teal">
+    <span class="cap">主な変更点</span>
+    <p style="margin:0 0 8px;"><b>① 積み立てられる金額が増える</b><br>年間上限：つみたて40万 → <b>120万円</b>／生涯上限：800万 → <b>1,800万円</b>。</p>
+    <p style="margin:0;"><b>② 非課税期間が無期限に</b><br>現行はつみたて20年・一般5年。新NISAは無期限で非課税となり、老後の資産形成に長期で取り組めます。</p>
+  </div>
+
+  <p>さて本題です。経営者にのみ許される、あの制度を使って新NISAを。その制度とは<span class="em-brick">「役員貸付」</span>——会社が役員にお金を貸し付ける制度です。</p>
+
+  <span class="blocklabel">通常の新NISAの流れ</span>
+  <ol class="steps">
+    <li>会社から役員報酬を支払う</li>
+    <li>社会保険と所得税・住民税を引かれた分が手取りに</li>
+    <li>手取りから新NISAへ投資</li>
+  </ol>
+
+  <div class="foot"><span class="foot-jp">08　経営者だけができる新NISA</span><span class="fnum">14</span></div>
+</section>
+
+<!-- ============ 08 経営者だけができる新NISA (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">08</span> 経営者だけができる新NISA</div>
+
+  <span class="blocklabel">「役員貸付」を使った流れ</span>
+  <ol class="steps">
+    <li>会社から社長にお金を貸付け</li>
+    <li>社長は適切な金利を会社に支払い</li>
+    <li>社長は社会保険も税金も引かれずに新NISA投資</li>
+    <li>新NISAで非課税で十分儲かった何十年後に、借りたお金を返済</li>
+  </ol>
+
+  <p>これで、相当に効率のいい投資が完成です。</p>
+
+  <div class="callout warn">
+    <span class="cap">注意点</span>
+    <p style="margin:0;">役員貸付は<b>銀行に対しての印象が非常に悪い</b>ため、借入をする予定がある会社は注意してください。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">08　経営者だけができる新NISA</span><span class="fnum">15</span></div>
+</section>
+
+<!-- ============ 09 積立投資にハワイ旅行 ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">09</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">積立投資にハワイ旅行がついてくる!?</h1>
+      <p class="mast-sub">クレカ積立で貯めたマイルを旅行へ</p>
+    </div>
+  </header>
+
+  <p>新NISAのつみたて投資枠を口座引き落としで行っても、ポイントは何もつきません。しかし、<b>クレジットカードで積立を行うことができる</b>のです。必要なのは「新NISAの証券口座」と「積み立てるためのクレジットカード」。この組み合わせによって、貯まるポイントやマイルが変わってきます。わかりやすい例は<b>「楽天証券 × 楽天のクレジットカード」</b>の組み合わせです。</p>
+
+  <div class="callout">
+    <span class="cap">実際の手順</span>
+    <ol class="steps" style="margin-top:2px;">
+      <li>証券会社で新NISA口座を開設</li>
+      <li>クレジットカードを作成</li>
+      <li>つみたて投資枠で月5万円の積み立てを開始</li>
+      <li>月5万円・毎年60万円に対してポイントが付与</li>
+      <li>ポイントをマイルに交換</li>
+    </ol>
+    <div class="strip" style="border:1px solid #EAD9A8;border-radius:2px;margin-top:4px;">貯まったマイルで、ハワイ旅行へ。</div>
+  </div>
+
+  <p style="margin-bottom:0;">実際には、入会で得られるポイントや、新NISAの積み立て以外の通常のお買い物もすれば、もっと早く貯まります。</p>
+
+  <div class="foot"><span class="foot-jp">09　積立投資にハワイ旅行</span><span class="fnum">16</span></div>
+</section>
+
+<!-- ============ 10 エンジェル税制 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">10</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">エンジェル税制</h1>
+      <p class="mast-sub">裏技中の裏技、効果特大</p>
+    </div>
+  </header>
+
+  <div class="callout teal">
+    <span class="cap">エンジェル税制とは</span>
+    <p style="margin:0;">『ベンチャー企業への投資を促進するため、エンジェル税制対象企業に投資された個人投資家に対して、税制上の優遇措置を行う制度』</p>
+  </div>
+
+  <p>対象企業へ投資し株主になった年に、税制上の優遇措置を受けられます。優遇措置AとBがあり、そのうち<b>A</b>をご紹介します。</p>
+
+  <div class="callout">
+    <span class="cap">優遇措置Aの要件</span>
+    <ul class="bullets tight" style="margin-bottom:0;">
+      <li>設立5年未満の企業が投資対象</li>
+      <li>[ 対象企業への投資額 − 2,000円 ] をその年の総所得金額から控除できる</li>
+      <li>投資額の上限は、総所得金額の40%と800万円のいずれか低い方</li>
+    </ul>
+  </div>
+
+  <div class="sim">
+    <div class="sim-head">年収 1,500万円の社長</div>
+    <div class="case">
+      <ul class="kv">
+        <li><span class="kv-k">通常の税額（所得税206万＋住民税108万）</span><span class="kv-v">314万円</span></li>
+        <li><span class="kv-k">エンジェル税制の投資上限</span><span class="kv-v">約522万円</span></li>
+        <li><span class="kv-k">控除後の税額（所得税69万＋住民税108万）</span><span class="kv-v">177万円</span></li>
+        <li class="kv-res"><span class="kv-k">節税額</span><span class="kv-v">137万円</span></li>
+      </ul>
+    </div>
+    <div class="strip">522万円の投資に対して137万円の節税 → 約26%の投資に成功</div>
+  </div>
+
+  <div class="foot"><span class="foot-jp">10　エンジェル税制</span><span class="fnum">17</span></div>
+</section>
+
+<!-- ============ 10 エンジェル税制 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">10</span> エンジェル税制</div>
+
+  <div class="sim">
+    <div class="sim-head">年収 2,000万円の社長</div>
+    <div class="case">
+      <ul class="kv">
+        <li><span class="kv-k">通常の税額（所得税354万＋住民税152万）</span><span class="kv-v">506万円</span></li>
+        <li><span class="kv-k">エンジェル税制の投資上限</span><span class="kv-v">約721万円</span></li>
+        <li><span class="kv-k">控除後の税額（所得税121万＋住民税152万）</span><span class="kv-v">273万円</span></li>
+        <li class="kv-res"><span class="kv-k">節税額</span><span class="kv-v">233万円</span></li>
+      </ul>
+    </div>
+    <div class="strip">721万円の投資に対して233万円の節税 → 約32%の投資に成功</div>
+  </div>
+
+  <div class="callout">
+    <span class="cap">同じく年収 3,000万円の社長</span>
+    <p style="margin:0;">800万円の投資に対して <span class="em">315万円</span> の節税。<b>約39%の投資に成功</b>と言えます。</p>
+  </div>
+
+  <p style="margin-bottom:0;" class="note">※ 節税額・投資上限は年収・控除状況により変わります。実行前に個別のご確認を。</p>
+
+  <div class="foot"><span class="foot-jp">10　エンジェル税制</span><span class="fnum">18</span></div>
+</section>
+
+<!-- ============ 11 非常勤役員 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">11</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">非常勤役員</h1>
+      <p class="mast-sub">家族を非常勤役員にして、家族の中で手取りを最大化</p>
+    </div>
+  </header>
+
+  <p>経営者からのよくある相談として、こんな相談があります。</p>
+
+  <div class="voices">
+    <div class="voice">うちの奥さん、働いていないんだけど非常勤役員にして役員報酬を払っても大丈夫？</div>
+    <div class="voice">あと、報酬の金額っていくらに設定しても大丈夫だろう？？</div>
+  </div>
+
+  <p>家族経営の会社では、家族を役員として報酬を払っているケースはよくあります。社長と奥さんで<b>『所得を分散』</b>することによって、世帯単位で税負担を減らすことができます。</p>
+
+  <div class="sim">
+    <div class="sim-head">シミュレーション</div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 1</span><span class="case-t">社長のみで役員報酬 1,200万円</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">役員報酬</span><span class="kv-v">1,200万円</span></li>
+        <li><span class="kv-k">− 所得税 125万 ／ 住民税 83万 ／ 社会保険 137万</span><span class="kv-v">△345万円</span></li>
+        <li class="kv-res"><span class="kv-k">手取り</span><span class="kv-v">855万円</span></li>
+      </ul>
+    </div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 2</span><span class="case-t">社長 1,080万円＋奥さん 120万円</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">社長の手取り <span style="color:var(--faint);">（報酬1,080万）</span></span><span class="kv-v">778万円</span></li>
+        <li><span class="kv-k">奥さんの手取り <span style="color:var(--faint);">（報酬120万）</span></span><span class="kv-v">117万円</span></li>
+        <li class="kv-res"><span class="kv-k">合計</span><span class="kv-v">895万円</span></li>
+      </ul>
+    </div>
+    <div class="strip">1年間で約 40万円、手取りが変わってきます！</div>
+  </div>
+
+  <div class="foot"><span class="foot-jp">11　非常勤役員</span><span class="fnum">19</span></div>
+</section>
+
+<!-- ============ 11 非常勤役員 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">11</span> 非常勤役員</div>
+
+  <p>家計で40万円手取りが違えば、毎年40万円の貯金ができますね。老後まで30年と考えれば、<span class="em">1,200万円の手取りの違い</span>になります。</p>
+
+  <p>ここで一つ問題になってくるのが、<b>働いていない奥さんを「非常勤役員」にしていいのか</b>という問題です。</p>
+
+  <div class="callout">
+    <span class="cap">過去の判例</span>
+    <p style="margin:0;">良き相談相手という曖昧な役割しか果たしていない母親に対する適正な役員報酬が、<span class="em fig">年額186万円</span> とされたものがあります。働いていない奥さんがいる社長は、税理士さんに相談してみるとよいでしょう。</p>
+  </div>
+
+  <div class="callout teal">
+    <p style="margin:0;">そして最後に、<b>奥さんに役員報酬を払うのにプラスして、退職金を払う</b>——ことも検討すると、さらにお得になります。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">11　非常勤役員</span><span class="fnum">20</span></div>
+</section>
+
+<!-- ============ 12 マイクロ法人 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">12</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">マイクロ法人</h1>
+      <p class="mast-sub">社会保険に悩む経営者必見</p>
+    </div>
+  </header>
+
+  <p>『マイクロ法人』を解説します。個人事業主をやめて法人を設立するのが一般的ですが、法人化すると個人事業主のメリットを丸々捨ててしまうことになります。そこでおススメなのが、<b>必要最低限の費用・設備で事業を営む形態の会社＝マイクロ法人</b>の設立。個人事業を残しながら、小さな法人を設立するということですね。</p>
+
+  <div class="mdbox merit">
+    <div class="md-head">MERIT ／ メリット</div>
+    <div class="md-row"><span class="md-n">1</span><div>社会保険料を削減できる</div></div>
+    <div class="md-row"><span class="md-n">2</span><div>所得税を節税できる</div></div>
+    <div class="md-row"><span class="md-n">3</span><div>役員社宅制度を利用できる</div></div>
+    <div class="md-row"><span class="md-n">4</span><div>消費税が免税される</div></div>
+    <div class="md-row"><span class="md-n">5</span><div>10年間の赤字繰り越し</div></div>
+  </div>
+
+  <p>この中で最もメリットだと考える<b>「① 社会保険の削減」</b>について深掘りします。</p>
+
+  <div class="sim">
+    <div class="sim-head">事例：40歳男性・所得500万円の個人事業主</div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 1</span><span class="case-t">個人事業のみの場合</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">国民健康保険料</span><span class="kv-v">約70万円</span></li>
+        <li><span class="kv-k">国民年金保険料</span><span class="kv-v">約40万円</span></li>
+        <li class="kv-res"><span class="kv-k">社会保険料 合計</span><span class="kv-v">約110万円</span></li>
+      </ul>
+    </div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 2</span><span class="case-t">マイクロ法人設立（役員報酬 年72万）＋個人事業を残す</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">健康保険料</span><span class="kv-v">約8万円</span></li>
+        <li><span class="kv-k">厚生年金保険料</span><span class="kv-v">約20万円</span></li>
+        <li class="kv-res"><span class="kv-k">社会保険料 合計</span><span class="kv-v">約28万円</span></li>
+      </ul>
+    </div>
+    <div class="strip">マイクロ法人の設立で、年間 82万円 の社会保険料を削減。</div>
+  </div>
+
+  <div class="foot"><span class="foot-jp">12　マイクロ法人</span><span class="fnum">21</span></div>
+</section>
+
+<!-- ============ 12 マイクロ法人 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">12</span> マイクロ法人</div>
+
+  <p>では、どうしてこんなに違うのか——。<b>社会保険料は、標準報酬月額で計算されます。</b>個人事業主は収入＝売上が上がると標準報酬月額が上がり、社会保険料が高くなります。</p>
+
+  <div class="callout teal">
+    <p style="margin:0;">しかし、マイクロ法人を設立すると社会保険が健康保険と厚生年金に切り替わり、<b>マイクロ法人からもらう役員報酬</b>によって標準報酬月額が決まります。つまり、役員報酬を最低限もらっていれば、個人事業がどれほど儲かっても、<b>最低限の役員報酬を基に計算された社会保険しか納める必要がありません。</b></p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">12　マイクロ法人</span><span class="fnum">22</span></div>
+</section>
+
+<!-- ============ 13 借上げ社宅 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">13</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">借上げ社宅</h1>
+      <p class="mast-sub">経営者にとっても社員にとっても◎、更に離職率ダウン</p>
+    </div>
+  </header>
+
+  <div class="callout">
+    <span class="cap">借上げ社宅とは</span>
+    <p style="margin:0;">会社が役員や社員のためにアパートやマンションを借りて貸し付ける、あるいは、現に役員や社員が借りている物件を会社が借上げて貸し付ける——というのが「借上げ社宅」といわれるものです。</p>
+  </div>
+
+  <span class="blocklabel">借上げ社宅を利用すればこんなに有利</span>
+  <ul class="bullets">
+    <li>会社の経費が増えて利益が減り、法人税などの負担を減らせる</li>
+    <li>社長は家賃負担が減り、役員報酬の実質手取額が増える<span class="bl-sub">会社が負担する家賃相当額だけ社長の給与を下げれば、所得税・住民税を減らしつつ、手取り給与を増やすこともできる。</span></li>
+    <li>社会保険料を減らすこともできる</li>
+  </ul>
+
+  <span class="blocklabel">役員や社員はどのくらい家賃を負担すればいいのか</span>
+  <p>会社が払う家賃の50%を負担していれば大丈夫、と一般にはよく言われます。確かに間違いではありませんが、実際はもっと低い負担でもOK。<b>結論から言うと、実際に支払う家賃の10%〜20%を負担すれば税務上は問題なし</b>、というケースが多いのです。ただし、そのためにクリアすべき条件がいくつかあります。</p>
+
+  <div class="callout">
+    <span class="cap">社長を含め役員が借上げ社宅を利用する条件</span>
+    <p style="margin:0 0 8px;"><b>条件① 規模の小さな住宅であること</b><br>木造132平米以下／木造以外99平米以下（マンション等は共用部分を含めて判定）。<span class="note">＝戸建の平均坪数程度、マンションで3LDK〜4LDK位の広さ。</span></p>
+    <p style="margin:0;"><b>条件② 次の算式による月額賃料相当額以上を役員から徴収</b><br>家屋の固定資産税課税標準額 ×0.2% ＋ 12円 × 床面積(平米)/3.3平米 ＋ 土地の固定資産税課税標準額 ×0.22%。<span class="note">＝家賃相場のおおむね10%〜20%の額を徴収していればOK。</span></p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">13　借上げ社宅</span><span class="fnum">23</span></div>
+</section>
+
+<!-- ============ 13 借上げ社宅 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">13</span> 借上げ社宅</div>
+
+  <p>家賃20万の駅近賃貸マンションに住んだ場合、社長が負担するのは1〜2割、つまり2万〜4万円で済みます。20万の家賃を役員報酬の手取りから払うのではなく、『借上げ社宅』なら家賃は会社負担に。会社は賃料が経費になり法人税を節税、社長は安い自己負担で手取りUP。社宅住まいだと簡単には退職しないので、社員の定着率も上がると言われます。では、実際にどのくらい手取りが変わるか見ていきます。</p>
+
+  <div class="sim">
+    <div class="sim-head">事例：社長役員報酬 月80万円／家賃 20万円</div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 1</span><span class="case-t">家賃を全額、社長個人が支払った場合</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">役員報酬</span><span class="kv-v">80万円</span></li>
+        <li><span class="kv-k">− 社会保険 10.1万 ／ 税金 11.3万 ／ 家賃 20万</span><span class="kv-v">△41.4万円</span></li>
+        <li class="kv-res"><span class="kv-k">最終手取り</span><span class="kv-v">38.6万円</span></li>
+      </ul>
+    </div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">CASE 2</span><span class="case-t">家賃の20%(4万)を社長負担・80%(16万)を会社負担／減った分だけ役員報酬を16万減</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">役員報酬（80万 → 64万）</span><span class="kv-v">64万円</span></li>
+        <li><span class="kv-k">− 社会保険 9.3万 ／ 税金 7万 ／ 家賃 4万</span><span class="kv-v">△20.3万円</span></li>
+        <li class="kv-res"><span class="kv-k">最終手取り</span><span class="kv-v">43.7万円</span></li>
+      </ul>
+    </div>
+    <div class="strip">手取りは月5万円以上アップ（年間 約60万円 の増加）。</div>
+  </div>
+
+  <p style="margin-bottom:0;">給与の額面を減らしたことで、社会保険と所得税・住民税の負担が減り、家賃負担も減るため、手取りは逆に増えます。法人側は役員報酬の減と家賃負担増がともに16万円でプラマイ0ですが、役員報酬が減った分、会社が負担する社会保険料も減ります。</p>
+
+  <div class="foot"><span class="foot-jp">13　借上げ社宅</span><span class="fnum">24</span></div>
+</section>
+
+<!-- ============ 14 経営セーフティー共済 ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">14</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">経営セーフティー共済</h1>
+      <p class="mast-sub">手軽な節税の王道</p>
+    </div>
+  </header>
+
+  <p>倒産防止共済に加入している経営者は多いと思います。節税額はそれほど多くないものの、使い勝手がよく、加入している中小企業が多い印象です。ただ、この倒産防止共済が2024年に<b>改悪の方向</b>で変更されるかもしれません。</p>
+
+  <div class="callout">
+    <span class="cap">解説</span>
+    <p style="margin:0;">倒産防止共済（経営セーフティー共済）は中小機構の制度で、取引先が倒産した際に連鎖倒産や経営難に陥ることを防ぐ制度です。無担保・無保証人で掛金の最高10倍（上限8,000万円）まで借入でき、<b>掛金は全額（累計800万円）損金算入できます。</b>掛金月額は5,000円〜20万円で自由に増減でき、年払いなら期末に240万円の損金を作れます。</p>
+  </div>
+
+  <p>翌期の業績が悪ければ減額もでき、解約して掛金を使うこともできます。自己都合の解約でも12カ月以上納めていれば掛金総額の8割以上、40カ月以上なら全額が戻ります（※12カ月未満は掛け捨て）。解約で戻ったお金は全額利益になるので、別の経費に有効活用を。解約後すぐ再開すればまた800万円まで損金を作れるため、積立・解約を繰り返せる使い勝手のいい手法でした。</p>
+
+  <div class="callout warn">
+    <span class="cap">2024年税制改正大綱による改悪</span>
+    <p style="margin:0;"><b>2024年10月1日以降の解約は、解約してから2年間は損金にできない</b>というルールに。国が認める使い勝手のいい節税手法でしたが、まさかの改悪となってしまうようです。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">14　経営セーフティー共済</span><span class="fnum">25</span></div>
+</section>
+
+<!-- ============ 15 法人生命保険 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">15</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">法人生命保険で納税の自在繰り延べ</h1>
+      <p class="mast-sub">普通の保険屋さんは知らない裏技</p>
+    </div>
+  </header>
+
+  <p>現在の法人生命保険は、2019年2月14日のいわゆる「バレンタインショック」以降、実質的に節税（法人税の繰り延べ）が難しくなっています。改正前は全額損金算入の法人保険があり、年間1,000万円払えば全額損金算入で、5年で5,000万円の損金を作れました。ただ、5,000万円すべて経費にしても、5年後に4,500万円の解約返戻金が発生し、その全額が益金になります。</p>
+
+  <div class="sim">
+    <div class="sim-head">5年間の手残り比較</div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">A</span><span class="case-t">法人保険 未加入</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">利益1,000万×5年 − 法人税300万×5年</span><span class="kv-v">—</span></li>
+        <li class="kv-res"><span class="kv-k">手残り</span><span class="kv-v">3,500万円</span></li>
+      </ul>
+    </div>
+    <div class="case">
+      <div class="case-h"><span class="case-badge">B</span><span class="case-t">法人保険 加入 → 解約（返戻率90%）</span></div>
+      <ul class="kv">
+        <li><span class="kv-k">加入中：利益1,000万 − 全額損金保険1,000万 ＝ 0円 ×5年</span><span class="kv-v">0円</span></li>
+        <li><span class="kv-k">解約時：利益4,500万 −（4,500万×30%）</span><span class="kv-v">3,150万円</span></li>
+        <li class="kv-res"><span class="kv-k">手残り</span><span class="kv-v">3,150万円</span></li>
+      </ul>
+    </div>
+    <div class="strip" style="background:#FBF2F0;border-top:1px solid #E7C7C1;color:var(--brick);">5年間は法人税を払わずとも、結局 350万円の損に。</div>
+  </div>
+
+  <div class="callout warn">
+    <span class="cap">問題点</span>
+    <p style="margin:0;">5年後に4,500万円の利益が出るとき、たまたま大赤字で相殺できれば得ですが、都合よく大赤字にはなりません。解約ではなく「払済」（保険料を払わず契約継続）にしても、解約返戻金は入らないのに経理処理で4,500万円の利益が発生するため、解決策になりません。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">15　法人生命保険で納税の自在繰り延べ</span><span class="fnum">26</span></div>
+</section>
+
+<!-- ============ 15 法人生命保険 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">15</span> 法人生命保険で納税の自在繰り延べ</div>
+
+  <p>では、解約も払済もせず保険料を払い続ければいいのか——というと、この全額損金の法人保険は解約返戻金のピークが約90%。契約から5〜10年がピークで、それを過ぎると解約返戻金はどんどん下がり、<b>最終的には0円になってしまう</b>恐ろしい保険です。ですので、10年以内に解決しないと、結局法人税を多額に納めることになります。</p>
+
+  <div class="callout teal">
+    <span class="cap">解決策</span>
+    <p style="margin:0 0 8px;">こういった法人保険に加入している社長のために、一つだけ解決策があります。全額損金の法人保険の<b>出口対策</b>——それは<b>「ある保険を払済する」</b>という方法です。普通の法人保険は払い済みしても意味がないのですが、「ある法人保険の払済」のみ課税されません。</p>
+    <p style="margin:0;" class="em-brick">4,500万円の解約返戻金を、課税されずに逃がす唯一の方法です。</p>
+  </div>
+
+  <p style="margin-bottom:0;">儲かっている社長ほど、節税のために法人保険に加入しています。ただ、加入時に課税されなくても、解約や払済時に大赤字を作らないと課税されてしまいます。全額損金の法人保険に加入の社長さん——このままでは課税されてしまいますよ。覚えておいてください。</p>
+
+  <div class="foot"><span class="foot-jp">15　法人生命保険で納税の自在繰り延べ</span><span class="fnum">27</span></div>
+</section>
+
+<!-- ============ 16 事業承継、相続対策、株価計算 (A) ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">16</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">事業承継、相続対策、株価計算</h1>
+      <p class="mast-sub">あなたの会社の株価は？株価引下げ対策も</p>
+    </div>
+  </header>
+
+  <p>儲かっている会社ほど株価が高くなっており、後継者への株の移転が進んでいません。自社株の移転には<b>① 売却　② 贈与　③ 相続</b> の3つの方法があります。取引先の銀行を中心に、事業承継対策が提案されているのをよく目にします。</p>
+
+  <div class="callout">
+    <span class="cap">よくある提案</span>
+    <ul class="bullets tight" style="margin-bottom:0;">
+      <li>保険で損金を作りましょう<span class="bl-sub">保険はいつか解約したときに課税される。</span></li>
+      <li>もう一つ会社を作ってホールディングスにしましょう<span class="bl-sub">毎年の税理士等コストがかかり、経理も2社分の費用がかかる。覚悟がないと手間。</span></li>
+      <li>持ち株会を作りましょう<span class="bl-sub">持ち株会社も手間。</span></li>
+    </ul>
+  </div>
+
+  <div class="callout teal">
+    <span class="cap">基本的な考え方</span>
+    <p style="margin:0 0 6px;">事業承継の目的は企業の存続。会社の財務体質は健全であるべきで、過度な事業承継対策はしない。この4つをバランスよく考えていきます。</p>
+    <div class="chips"><span class="chip">財務</span><span class="chip">後継者</span><span class="chip">自社株</span><span class="chip">相続</span></div>
+  </div>
+
+  <p style="margin-bottom:0;">子供に継がせるなら、会社に無駄な資産を溜めず<b>株価を低く。</b>後継者がいないなら、高くM&Aで売れるよう<b>会社の価値を上げる。</b>要するに余計なことはせず、株価引下げ対策をできるだけ行う。<b>丁寧に一つずつ行えば、株価は下がります。</b></p>
+
+  <div class="foot"><span class="foot-jp">16　事業承継、相続対策、株価計算</span><span class="fnum">28</span></div>
+</section>
+
+<!-- ============ 16 事業承継、相続対策、株価計算 (B) ============ -->
+<section class="page">
+  <div class="runhead"><span class="rn">16</span> 事業承継、相続対策、株価計算</div>
+
+  <div class="callout">
+    <span class="cap">株価引下げ対策の例</span>
+    <ul class="bullets tight" style="margin-bottom:0;">
+      <li>退職金の支給</li>
+      <li>従業員の決算賞与</li>
+      <li>損金性の保険商品</li>
+      <li>特別償却や割増償却が可能な商品の購入</li>
+      <li>不良在庫の処分</li>
+      <li>含み損を抱えている固定資産（有価証券・不動産・ゴルフ会員権）の売却</li>
+      <li>不良債権に対する貸倒損失の計上</li>
+      <li>損金算入限度額の範囲内での各種引当金の設定</li>
+    </ul>
+  </div>
+
+  <p>上記の手法で株価が下がったら、最後の最後は——</p>
+
+  <div class="callout teal">
+    <p style="margin:0;font-size:15px;"><b>相続時精算課税制度で贈与。</b>　これで完璧です。</p>
+  </div>
+
+  <div class="foot"><span class="foot-jp">16　事業承継、相続対策、株価計算</span><span class="fnum">29</span></div>
+</section>
+
+<!-- ============ 17 ふるさと納税 ============ -->
+<section class="page">
+  <header class="mast">
+    <div class="mast-num">17</div>
+    <div class="mast-titles">
+      <span class="eyebrow">会社と社長の手取り最大化</span>
+      <h1 class="mast-title">ふるさと納税</h1>
+      <p class="mast-sub">ふるさと納税で星野リゾートへ無料宿泊</p>
+    </div>
+  </header>
+
+  <p>ふるさと納税は、地方自治体に年間何回寄付をしても<b>自己負担2,000円</b>で、寄付額の約3割の返礼品がもらえる制度。高額納税者の社長にとっては人気の制度です。人気返礼品といえば肉やお米などの食品が有名ですが、旅行好きの社長のために今回おすすめするのは——<span class="em-brick">星野リゾートの宿泊ギフト券</span>です。</p>
+
+  <div class="callout">
+    <span class="cap">星野リゾートの例</span>
+    <ul class="bullets tight" style="margin-bottom:0;">
+      <li>星のや沖縄</li>
+      <li>星のや竹富島</li>
+      <li>星のや富士</li>
+      <li>リゾナーレ那須</li>
+    </ul>
+    <p class="note" style="margin:10px 0 0;">等々、憧れの宿泊施設がいっぱいです。</p>
+  </div>
+
+  <div class="strip" style="border:1px solid #EAD9A8;border-radius:2px;">100万円のふるさと納税で、30万円の宿泊券。住民税を多額に納める社長にとって、やらない手はありません。</div>
+
+  <p style="margin-bottom:0;">他にもJTBや楽天トラベルで使える旅行券もあるので、星のや以外の温泉旅行などにも。さらに、ふるさと納税は<b>クレジットカード決済にも対応</b>しているので、ポイント還元の分もお得になります。</p>
+
+  <div class="foot"><span class="foot-jp">17　ふるさと納税</span><span class="fnum">30</span></div>
+</section>
+
+</body>
+</html>
